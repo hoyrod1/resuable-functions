@@ -4,3 +4,150 @@ console.log(
 console.log(
   "=============================================================================="
 );
+console.log(
+  "================================ Code Exanples ==============================="
+);
+/**
+ * Any of the examples below will accomplish the
+ * same task: reversing a string.
+ *
+ * Which of these examples is best? Why?
+ * Note that there is no "correct" answer.
+ */
+function reverseString(str) {
+  const strArray = str.split("");
+  const revArray = strArray.reverse();
+  const revString = revArray.join("");
+  return revString;
+}
+
+function reverseString2(str) {
+  return str.split("").reverse().join("");
+}
+
+function reverseString3(str) {
+  let revString = "";
+  for (let i = str.length - 1; i >= 0; i--) {
+    revString += str[i];
+  }
+  return revString;
+}
+
+function reverseString4(str) {
+  if (str === "") return "";
+  else return reverseString4(str.substr(1)) + str.charAt(0);
+}
+
+function reverseString5(str) {
+  return str === "" ? "" : reverseString5(str.substr(1)) + str.charAt(0);
+}
+
+console.log(reverseString("!dlroW olleH"));
+console.log(reverseString2("!dlroW olleH"));
+console.log(reverseString3("!dlroW olleH"));
+console.log(reverseString4("!dlroW olleH"));
+console.log(reverseString5("!dlroW olleH"));
+console.log(
+  "=============================================================================="
+);
+console.log(
+  "======================== Part1: Thinking Functionally ========================"
+);
+//- This Function returns the sum of the array ---------------------------------//
+// An array of numbers
+const sumNumArr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
+// This function returns the sum of an array
+function sumOfNumbers(numArrParam) {
+  let totalNumCount = 0;
+  for (let i = 0; i < numArrParam.length; i++) {
+    totalNumCount += numArrParam[i];
+  }
+  return totalNumCount;
+}
+
+console.log(sumOfNumbers(sumNumArr));
+//==============================================================================//
+//- This Function returns the average of the array -----------------------------//
+// An array of numbers
+const averageNumArr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
+// This function returns the sum of an array
+function averageOfNumbers(averageNumArrParam) {
+  let averageCount = 0;
+  for (let i = 0; i < averageNumArrParam.length; i++) {
+    averageCount += averageNumArrParam[i];
+  }
+  return averageCount / averageNumArrParam.length;
+}
+
+console.log(averageOfNumbers(averageNumArr));
+//==============================================================================//
+//- This Function returns the longest string in the array ----------------------//
+// An array of strings
+const arrayOfStrings = [
+  "Rodney",
+  "Raymond",
+  "Marie",
+  "Lisa",
+  "Sandra",
+  "Patricia",
+];
+// This function returns the longes string in the array
+function resturnLongestString(arrayOfStrings) {
+  let theLongestString = "";
+  for (let i = 0; i < arrayOfStrings.length; i++) {
+    if (arrayOfStrings[i].length > theLongestString.length) {
+      theLongestString = arrayOfStrings[i];
+    }
+  }
+  return theLongestString;
+}
+console.log(resturnLongestString(arrayOfStrings));
+// console.log(arrayOfStrings[0].length < arrayOfStrings[5].length);
+//==============================================================================//
+//==============================================================================//
+// This Function returns an array of strings greater than a number in the array //
+// An array of strings and a number
+const arrayOfStringsAndNumber = [
+  "Hello",
+  5,
+  "Goodbye",
+  "Morning",
+  "Night",
+  "Day",
+  "Peace",
+];
+function returnArrayOfStrings(arrayOfStringsAndNumber) {
+  let arrayOfStrings = [];
+  let testNumber = "";
+
+  for (let i = 0; i < arrayOfStringsAndNumber.length; i++) {
+    if (typeof arrayOfStringsAndNumber[i] === "number") {
+      testNumber = arrayOfStringsAndNumber[i];
+    }
+
+    if (arrayOfStringsAndNumber[i].length > testNumber) {
+      arrayOfStrings.push(arrayOfStringsAndNumber[i]);
+    }
+  }
+
+  return arrayOfStrings;
+  // return testNumber;
+}
+console.log(returnArrayOfStrings(arrayOfStringsAndNumber));
+// console.log(arrayOfStringsAndNumber[0].length > arrayOfStringsAndNumber[1]);
+// console.log(typeof arrayOfStringsAndNumber[1]);
+// console.log(typeof arrayOfStringsAndNumber[0]);
+//==============================================================================//
+// This Function returns every number between 1 and a number stored in "n" -----//
+// A variable with a number
+const n = 10;
+
+function recurseNumber(numberFifty, startNum) {
+  if (startNum > numberFifty) {
+    return;
+  }
+  console.log(startNum);
+  recurseNumber(n, startNum + 1);
+}
+recurseNumber(n, 1);
+//==============================================================================//
