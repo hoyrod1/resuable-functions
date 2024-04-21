@@ -193,6 +193,17 @@ function changeArrayObjKeyAndValue(arrayOfObjects) {
 }
 console.log(changeArrayObjKeyAndValue(arrayOfObjects));
 //==============================================================================//
+//==============================================================================//
+// This Function will calculate the sum of the ages and calculate the average --//
+function sumAveragOfArrayObjAge(arrayOfObjects) {
+  let arrayOfObjectsSum = arrayOfObjects.reduce((ageA, ageB) => ({
+    age: Number(ageA.age) + Number(ageB.age),
+  }));
+  arrayOfObjectsAverage = Number(arrayOfObjectsSum.age) / arrayOfObjects.length;
+  return arrayOfObjectsAverage;
+}
+console.log(sumAveragOfArrayObjAge(arrayOfObjects));
+//==============================================================================//
 console.log(
   "=============================================================================="
 );
