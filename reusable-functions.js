@@ -177,3 +177,22 @@ function filterArrayByAge(arrayOfObjects) {
 }
 console.log(filterArrayByAge(arrayOfObjects));
 //==============================================================================//
+//==============================================================================//
+// This Function will change the object key "occupation" to "job"       --------//
+// and add 1 to the age value                                           --------//
+function changeArrayObjKeyAndValue(arrayOfObjects) {
+  // This maps the array of objects & changes the object key "occupation" to "job"
+  let arrObjKey = arrayOfObjects.map(({ occupation: job, ...objKey }) => ({
+    job,
+    ...objKey,
+  }));
+  // This maps the array of objects and increases the age by one
+  return arrObjKey.map((objAge) => {
+    return { ...objAge, age: Number(objAge.age) + 1 };
+  });
+}
+console.log(changeArrayObjKeyAndValue(arrayOfObjects));
+//==============================================================================//
+console.log(
+  "=============================================================================="
+);
