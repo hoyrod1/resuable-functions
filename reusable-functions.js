@@ -175,7 +175,11 @@ ageIncremetorFunc(ageObjectIncr);
 console.log(ageObjectIncr);
 //------------------------------------------------------------------------------//
 // Object age incrementorpass by reference
-let ageObjectIncr2 = { firstname: "Rodney", lastname: "St. Cloud" };
+let ageObjectIncr2 = {
+  firstname: "Rodney",
+  lastname: "St. Cloud",
+  updated_at: new Date(),
+};
 function ageIncremetorFunc2(ageObjectIncr2) {
   if (!ageObjectIncr2.hasOwnProperty("age")) {
     ageObjectIncr2.age = 0;
@@ -184,11 +188,13 @@ function ageIncremetorFunc2(ageObjectIncr2) {
     firstname: null,
     lastname: null,
     age: null,
-    updated_at: new Date(),
+    updated_at: null,
   };
   ageObjectIncr2Ref.firstname = ageObjectIncr2.firstname;
   ageObjectIncr2Ref.lastname = ageObjectIncr2.lastname;
   ageObjectIncr2Ref.age = ageObjectIncr2.age + 10;
+  ageObjectIncr2Ref.updated_at =
+    ageObjectIncr2.updated_at.setTime(1532403882588);
 
   return ageObjectIncr2Ref;
 }
