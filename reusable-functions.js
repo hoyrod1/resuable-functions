@@ -78,7 +78,7 @@ function averageOfNumbers(averageNumArrParam) {
   }
   return averageCount / averageNumArrParam.length;
 }
-
+// averageOfNumbers(averageNumArr);
 console.log(averageOfNumbers(averageNumArr));
 //==============================================================================//
 //- This Function returns the longest string in the array ----------------------//
@@ -101,7 +101,7 @@ function resturnLongestString(arrayOfStrings) {
   }
   return theLongestString;
 }
-console.log(resturnLongestString(arrayOfStrings));
+resturnLongestString(arrayOfStrings);
 // console.log(arrayOfStrings[0].length < arrayOfStrings[5].length);
 //==============================================================================//
 //==============================================================================//
@@ -150,4 +150,24 @@ function recurseNumber(numberFifty, startNum) {
   recurseNumber(n, startNum + 1);
 }
 recurseNumber(n, 1);
+//==============================================================================//
+//==============================================================================//
+console.log(
+  "======================== Part2: Thinking Methodically ========================"
+);
+const arrayOfObjects = [
+  { id: "42", name: "Bruce", occupation: "Knight", age: "41" },
+  { id: "48", name: "Barry", occupation: "Runner", age: "25" },
+  { id: "57", name: "Bob", occupation: "Fry Cook", age: "19" },
+  { id: "63", name: "Blaine", occupation: "Quiz Master", age: "58" },
+  { id: "7", name: "Bilbo", occupation: "None", age: "111" },
+];
+//==============================================================================//
+// This Function sorts this array of objects by the objects age property -------//
+function sortArrayByAge(arrayOfObjects) {
+  return arrayOfObjects.sort((objectA, objectB) => objectA.age - objectB.age);
+}
+console.log(sortArrayByAge(arrayOfObjects));
+// console.log(arrayOfObjects[0].age);
+//==============================================================================//
 //==============================================================================//
