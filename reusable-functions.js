@@ -5,52 +5,6 @@ console.log(
   "=============================================================================="
 );
 console.log(
-  "================================ Code Exanples ==============================="
-);
-/**
- * Any of the examples below will accomplish the
- * same task: reversing a string.
- *
- * Which of these examples is best? Why?
- * Note that there is no "correct" answer.
- */
-// function reverseString(str) {
-//   const strArray = str.split("");
-//   const revArray = strArray.reverse();
-//   const revString = revArray.join("");
-//   return revString;
-// }
-
-// function reverseString2(str) {
-//   return str.split("").reverse().join("");
-// }
-
-// function reverseString3(str) {
-//   let revString = "";
-//   for (let i = str.length - 1; i >= 0; i--) {
-//     revString += str[i];
-//   }
-//   return revString;
-// }
-
-// function reverseString4(str) {
-//   if (str === "") return "";
-//   else return reverseString4(str.substr(1)) + str.charAt(0);
-// }
-
-// function reverseString5(str) {
-//   return str === "" ? "" : reverseString5(str.substr(1)) + str.charAt(0);
-// }
-
-// console.log(reverseString("!dlroW olleH"));
-// console.log(reverseString2("!dlroW olleH"));
-// console.log(reverseString3("!dlroW olleH"));
-// console.log(reverseString4("!dlroW olleH"));
-// console.log(reverseString5("!dlroW olleH"));
-console.log(
-  "=============================================================================="
-);
-console.log(
   "======================== Part1: Thinking Functionally ========================"
 );
 //- This Function returns the sum of the array ---------------------------------//
@@ -204,6 +158,43 @@ function sumAveragOfArrayObjAge(arrayOfObjects) {
 }
 console.log(sumAveragOfArrayObjAge(arrayOfObjects));
 //==============================================================================//
+//==============================================================================//
 console.log(
-  "=============================================================================="
+  "========================= Part3: Thinking Critically ========================="
 );
+//------------------------------------------------------------------------------//
+// Object age incrementor pass by value
+let ageObjectIncr = { firstname: "Rodney", lastname: "St. Cloud", age: 50 };
+function ageIncremetorFunc(ageObjectIncr) {
+  if (!ageObjectIncr.hasOwnProperty("age")) {
+    ageObjectIncr.age = 20;
+  }
+  return ageObjectIncr.age++;
+}
+ageIncremetorFunc(ageObjectIncr);
+console.log(ageObjectIncr);
+//------------------------------------------------------------------------------//
+// Object age incrementorpass by reference
+let ageObjectIncr2 = { firstname: "Rodney", lastname: "St. Cloud" };
+function ageIncremetorFunc2(ageObjectIncr2) {
+  if (!ageObjectIncr2.hasOwnProperty("age")) {
+    ageObjectIncr2.age = 0;
+  }
+  const ageObjectIncr2Ref = {
+    firstname: null,
+    lastname: null,
+    age: null,
+    updated_at: new Date(),
+  };
+  ageObjectIncr2Ref.firstname = ageObjectIncr2.firstname;
+  ageObjectIncr2Ref.lastname = ageObjectIncr2.lastname;
+  ageObjectIncr2Ref.age = ageObjectIncr2.age + 10;
+
+  return ageObjectIncr2Ref;
+}
+let newAgeObjectIncr2 = ageIncremetorFunc2(ageObjectIncr2);
+console.log(ageObjectIncr2);
+console.log(newAgeObjectIncr2);
+// ageObjectIncr2Ref.age + 20;
+//==============================================================================//
+console.log("==================Practice======================");
